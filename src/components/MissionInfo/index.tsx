@@ -2,8 +2,11 @@ import React from 'react';
 import { useLaunchMissionInfoQuery } from './../../generated/graphql'
 import MissionList from './MissionInfo';
 
-const MissionInfoContainer = () => {
-
+interface OwnProps {
+    id: any;
+  }
+const MissionInfoContainer = ({id}:OwnProps) => {
+    console.log(id);
     const { data, loading, error } = useLaunchMissionInfoQuery({
         variables: { id: '25' },
     });

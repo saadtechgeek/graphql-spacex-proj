@@ -3,15 +3,15 @@ import { MissionsInfoQuery } from './../../generated/graphql'
 import './MissionList.css';
 
 export interface OwnProps {
-    handleIdChange: (newId: number) => void;
+    handleIdChange: (newId: any) => void;
   }
   
   const className = 'MissionList';
 
-interface Props {
+interface Props extends OwnProps {
     data: MissionsInfoQuery
 }
-const MissionList: React.FC<Props> = ({ data  }) => {
+const MissionList: React.FC<Props> = ({ data,handleIdChange  }) => {
     return (
         <div className={className}>
         <h3>Missions</h3>
@@ -20,7 +20,7 @@ const MissionList: React.FC<Props> = ({ data  }) => {
             data.launches.map(
               (launch, i) =>
                 !!launch && (
-                  <li key={i} className={`${className}__item`}>
+                  <li key={i} className={`${className}__item`} onClick={() => handleIdChange(launch.flight_number!)}>
                     {launch.mission_name} ({launch.launch_year})
                   </li>
                 ),
