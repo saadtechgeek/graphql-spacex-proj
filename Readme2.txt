@@ -10,4 +10,17 @@ https://spacexdata.herokuapp.com/graphql
 codegen
 
 
+yarn graphsql-codegen init
+
+
+
+you need to do it to learn implmentation.
+
+introspection --> check what it is!!
+
+
+npm install typescript-react-apollo
+
+
+sudo yarn codegen --> this will create code.
 

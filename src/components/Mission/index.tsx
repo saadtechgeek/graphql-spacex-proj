@@ -18,4 +18,4 @@ const MissionContainer = () => {
     )
 }
 
-export default MissionContainer
+export default MissionContainer;
